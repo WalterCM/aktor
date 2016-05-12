@@ -5,10 +5,12 @@ import sys
 from models import EquipmentModel
 from PyQt5.QtCore import Qt, QVariant
 from PyQt5.QtWidgets import QWidget
+from PyQt5.QtWidgets import QHeaderView
 from PyQt5.QtWidgets import QItemDelegate
 from PyQt5.QtWidgets import QComboBox
+from PyQt5.QtWidgets import QTextEdit
 from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtWidgets import QVBoxLayout
+from PyQt5.QtWidgets import QHBoxLayout
 from PyQt5.QtWidgets import QTableView
 from PyQt5.QtWidgets import QAbstractItemView
 from PyQt5.QtWidgets import QApplication
@@ -58,6 +60,7 @@ class EquipmentView(QTableView):
         self.setItemDelegateForColumn(6, delegate)
         self.setSelectionMode(QAbstractItemView.MultiSelection)
         self.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
 class MainWindow(QMainWindow):
     
@@ -69,19 +72,24 @@ class MainWindow(QMainWindow):
         self.mainWidget = QWidget()
         self.setCentralWidget(self.mainWidget)
 
-        vbox = QVBoxLayout()
-        self.mainWidget.setLayout(vbox)
+        hbox = QHBoxLayout()
+        self.mainWidget.setLayout(hbox)
 
         view = EquipmentView()
-        vbox.addWidget(view)
+        hbox.addWidget(view)
 
         self.resize(view.rect().width(),
                     view.rect().height())
 
-        button = QPushButton()
-        vbox.addWidget(button)
+        preview = QTextEdit()
+        hbox.addWidget(preview)
         
         self.setWindowTitle('aktor')
+        screenGeometry = QApplication.desktop().screenGeometry();
+        x = (screenGeometry.width()- self.width()) / 2;
+        y = (screenGeometry.height()- self.height()) / 2;
+        #self.move(x, y)
+        self.setGeometry(x, y, 1000, 500)
         self.show()
 
 if __name__ == '__main__':

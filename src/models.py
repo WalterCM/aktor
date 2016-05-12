@@ -46,19 +46,11 @@ class EquipmentModel(QSqlQueryModel):
 
     def refresh(self):
         self.setQuery("SELECT  d.description,\
-                               i.id,\
-                               i.serie_direjandro,\
-                               d.brand,\
-                               d.model,\
                                i.serie,\
                                i.state\
                        FROM Items as i\
                        INNER JOIN Devices as d\
                        ON i.device_id = d.id")
         self.setHeaderData(0, Qt.Horizontal, "Descripcion")
-        self.setHeaderData(1, Qt.Horizontal, "Item\ndirejandro")
-        self.setHeaderData(2, Qt.Horizontal, "Serie\nDirejandro")
-        self.setHeaderData(3, Qt.Horizontal, "Marca")
-        self.setHeaderData(4, Qt.Horizontal, "Modelo")
-        self.setHeaderData(5, Qt.Horizontal, "Serie")
-        self.setHeaderData(6, Qt.Horizontal, "Estado")
+        self.setHeaderData(1, Qt.Horizontal, "Serie")
+        self.setHeaderData(2, Qt.Horizontal, "Estado")
