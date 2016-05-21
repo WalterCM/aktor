@@ -1,0 +1,22 @@
+#title {
+    text-align: center;
+}
+#signature-space {
+    display: flex;
+}
+#recipient {
+    background: lightblue;
+}
+#sender {
+    background: lightgreen;
+}
+#details {
+    
+}
+p {
+    text-align: justify;
+}
+body {
+    margin-left:40px;
+    margin-right:40px;
+}

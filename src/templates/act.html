@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Act Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <h4 id="title">ACTA DE ENTREGA Y REECEPCION DE DISPOSITIVOS ELECTRONICOS</h4>
+    <p>---En el Distrito de San Isidro, siendo las [% time %] del
+    [% date %], presentes en la Oficina de  Apoyo Tecnico -
+    UNIANA-DIRIAD-DIREJANDRO PNP, sito en el Jr. Los Cisnes N<sup>o</sup>594; el SOS PNP
+    Walter CAPA GURBILLON, identificado con CIP N<sup>o</sup> 30647966 encargado de la
+    oficina de Apoyo Tecnico, por disposicion del Sr. Comandante Juan Carlos
+    SAMANIEGO MIRANDA, hace entrega al [% rank %] [% recipient %],
+    identificado con CIP N<sup>o</sup> [% cip %], [% job %], en calidad de prestamo de
+    [% amount_text %] ([% amount %]) equipos electronicos conforme al detalle siguiente:</p>
+
+    <div id="details">
+        [% details %]
+    </div>
+
+    <p>Los Referidos equipos electronicos se encuentran
+    registrados en el AREA DE CONTROL DE BIENES PATRIMONIALES (ACBP) de la
+    DIREJANDRO PNP, y considerados en el inventario Fisico de Bienes de la
+    UNIDAD DE ANALISIS, siendo responsabilidad del usuario el uso y cuidado
+    de dichos bienes recibidos en la fecha.</p>
+
+    <p>Siendo las [% endtime %] horas del mismo dia se da por concluida
+    la presente diligencia y para mayor constancia firman en se&#241;al de
+    conformidad</p>
+    <div id="signature-space">
+        <div id="recipient" class="col-lg-6">
+            <h4>RECIBI CONFORME</h4>
+            <p>__________________<br>
+            CIP N<sup>o</sup> [% cip %]<br>
+            [% recipient %]<br>
+            [% rank %]<br>
+            [% job %]</p>
+        </div>
+        <div id="sender" class="col-lg-6">
+            <h4>ENTREGUE CONFORME</h4>
+            <p>__________________<br>
+            SOA N<sup>o</sup> 30647966<br>
+            Walter CAPA GURBILLON<br>
+            SOS PNP<br>
+            ENCARGADO DE APOYO TECNICO</p>
+        </div>
+    </div>
+</body>
+</html>
